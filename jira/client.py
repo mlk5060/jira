@@ -30,7 +30,6 @@ import requests
 import sys
 import time
 import warnings
-import urllib
 
 from requests.utils import get_netrc_auth
 from urllib.parse import urlparse
@@ -3127,10 +3126,6 @@ class JIRA(object):
 
         """
         url = self._get_url(path, base)
-        print(url)
-        print(params)
-        if params is not None:
-            params = urllib.parse.quote_plus(params)
         r = self._session.get(url, params=params)
         try:
             r_json = json_loads(r)
