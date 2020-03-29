@@ -3129,7 +3129,8 @@ class JIRA(object):
         url = self._get_url(path, base)
         print(url)
         print(params)
-        params = urllib.parse.quote_plus(params)
+        if params is not None:
+            params = urllib.parse.quote_plus(params)
         r = self._session.get(url, params=params)
         try:
             r_json = json_loads(r)
