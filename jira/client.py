@@ -3110,9 +3110,6 @@ class JIRA(object):
 
         """
         options = self._options.copy()
-        print(path)
-        encoded_path = urllib.parse.quote_plus(path)
-        print(encoded_path)
         options.update({"path": encoded_path})
         return base.format(**options)
 
@@ -3130,6 +3127,9 @@ class JIRA(object):
 
         """
         url = self._get_url(path, base)
+        print(url)
+        print(params)
+        params = urllib.parse.quote_plus(params)
         r = self._session.get(url, params=params)
         try:
             r_json = json_loads(r)
