@@ -3110,7 +3110,7 @@ class JIRA(object):
 
         """
         options = self._options.copy()
-        options.update({"path": encoded_path})
+        options.update({"path": path})
         return base.format(**options)
 
     def _get_json(self, path, params=None, base=JIRA_BASE_URL):
