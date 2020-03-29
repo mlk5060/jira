@@ -3110,7 +3110,9 @@ class JIRA(object):
 
         """
         options = self._options.copy()
+        print(path)
         encoded_path = urllib.parse.quote_plus(path)
+        print(encoded_path)
         options.update({"path": encoded_path})
         return base.format(**options)
 
