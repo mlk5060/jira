@@ -3111,7 +3111,7 @@ class JIRA(object):
         """
         options = self._options.copy()
         options.update({"path": path})
-        return urllib.quote_plus(base.format(**options))
+        return urllib.parse.quote_plus(base.format(**options))
 
     def _get_json(self, path, params=None, base=JIRA_BASE_URL):
         """Get the json for a given path and params.
